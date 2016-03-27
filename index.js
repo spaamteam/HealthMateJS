@@ -1,20 +1,16 @@
 var express = require("express");
 var app = express();
 
-//Creating Router() object
-
-var router = express.Router();
-
 // Provide all routes here, this is for Home page.
 
-router.get("/",function(req,res){
+app.get("/",function(req,res){
   res.json({"message" : "Hello World"});
 });
 
 // Tell express to use this router with /api before.
 // You can put just '/' if you don't want any sub path before routes.
 
-app.use("/api",router);
+app.get("/api",router);
 
 // Listen to this Port
 
